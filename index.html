@@ -10,8 +10,9 @@
 
 <body>
         <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe style="display:none">
+    <div id="lol"></div>
     <script type="text/javascript">
-  
+    
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
            user = 'kirseich_mini';
@@ -28,10 +29,12 @@
      
         }
         let timer = setTimeout(function(){
-           window.location.href="https://www.instagram.com/_u/"+user;
+           //window.location.href="https://www.instagram.com/_u/"+user;
+            document.getElementById("lol").html("не вышло");
         },2000)
         function remove(){
             clearTimeout(timer);
+            document.getElementById("lol").html("вышло");
             window.location.href = document.getElementById("frame").src ;
            console.log("removed");
         }
