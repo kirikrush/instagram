@@ -9,32 +9,36 @@
 </head>
 
 <body>
-        <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe>
+    <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe>
     <script type="text/javascript">
-  
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
-           user = 'kirseich_mini';
-           document.getElementById("frame").src = 'instagram://user?username=kirseich_mini';
-        }   
-        else if (/Android/i.test(navigator.userAgent)) {
+            user = 'kirseich_mini';
+            if (document.cookie.indexOf("iphone_redirect=false") == -1) {
+                window.location = "instagram://user?username=" +
+                    user;
+            }
+            else{
+                window.location = "https://www.instagram.com/_u/kirseich";
+            }
+        } else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
-            user='kirseich';
+            user = 'kirseich';
             document.getElementById("frame").src = 'instagram://user?username=kirseich';
+        } else {
+            user = 'vcegdavesna';
+            window.location.href = "https://www.instagram.com/_u/kirseich";
+
         }
-        else{
-           user = 'vcegdavesna';
-          window.location.href="https://www.instagram.com/_u/"+user;
-     
-        }
-        let timer = setTimeout(function(){
-           window.location.href="https://www.instagram.com/_u/"+user;
-           console.log("not removed");
-        },2000)
-        function remove(){
+        let timer = setTimeout(function () {
+             window.location.href="https://www.instagram.com/_u/"+user;
+            console.log("not removed");
+        }, 2000)
+
+        function remove() {
             clearTimeout(timer)
             console.log("removed");
-            window.location.href="instagram://user?username="+user;
+            window.location.href = "instagram://user?username=" + user;
         }
     </script>
 </body>
