@@ -15,12 +15,12 @@
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
            user = 'kirseich_mini';
-           document.getElementById("frame").src = 'iinstagram://user?username=kirseich_mini';
+           document.getElementById("frame").src = 'instagram://user?username=kirseich_mini';
         }
         else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
             user='kirseich';
-            document.getElementById("frame").src = 'intent://instagram.com/_u/kirseich/#Intent;package=com.instagram.android;scheme=https;end';
+            document.getElementById("frame").src = 'instagram://user?username=kirseich';
         }
         else{
            user = 'vcegdavesna';
