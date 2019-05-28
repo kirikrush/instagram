@@ -9,21 +9,31 @@
 </head>
 
 <body>
+        <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe style="display:none">
     <script type="text/javascript">
   
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
-            url = "instagram://user?username=kirseich.mini";
+           user = 'kirseich_mini';
+           document.getElementById("frame").src = 'instagram://user?'+user;
         }
         else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
-             url = "https://www.instagram.com/_u/kirseich/";
+            user='kirseich';
+            document.getElementById("frame").src = 'instagram://user?'+user;
         }
         else{
-            url = "https://www.instagram.com/_u/vcegdavesna/";
+           user = 'vcegdavesna';
+           window.location.href="https://www.instagram.com/_u/"+user;
      
         }
-  window.location.href = url;
+        let timer = setTimeout(function(){
+            window.location.href="https://www.instagram.com/_u/"+user;
+        },1200)
+        function remove(){
+            clearTimeout(timer);
+            console.log("removed");
+        }
     </script>
 </body>
 
