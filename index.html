@@ -9,15 +9,14 @@
 </head>
 
 <body>
-        <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe style="display:none">
-    <div id="lol"></div>
+        <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe>
     <script type="text/javascript">
-    
+  
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
            user = 'kirseich_mini';
-           document.getElementById("frame").src = 'instagram://user?username=kirseich';
-        }
+           document.getElementById("frame").src = 'instagram://user?username=kirseich_mini';
+        }   
         else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
             user='kirseich';
@@ -25,18 +24,17 @@
         }
         else{
            user = 'vcegdavesna';
-           window.location.href="https://www.instagram.com/_u/vcegdavesna";
+          window.location.href="https://www.instagram.com/_u/kirseich";
      
         }
         let timer = setTimeout(function(){
-           //window.location.href="https://www.instagram.com/_u/"+user;
-            document.getElementById("lol").html("не вышло");
+        //    window.location.href="https://www.instagram.com/_u/"+user;
+           console.log("not removed");
         },2000)
         function remove(){
-            clearTimeout(timer);
-            document.getElementById("lol").html("вышло");
-            window.location.href = document.getElementById("frame").src ;
-           console.log("removed");
+            clearTimeout(timer)
+            console.log("removed");
+            window.location.href="instagram://user?username="+user;
         }
     </script>
 </body>
