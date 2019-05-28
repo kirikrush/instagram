@@ -15,7 +15,7 @@
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
            user = 'kirseich_mini';
-           window.location.href = 'instagram://user?username=kirseich';
+           document.getElementById("frame").src = 'instagram://user?username=kirseich';
         }
         else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
@@ -27,13 +27,13 @@
            window.location.href="https://www.instagram.com/_u/vcegdavesna";
      
         }
-        //let timer = setTimeout(function(){
-        //   window.location.href="https://www.instagram.com/_u/"+user;
-        //},2000)
-        //function remove(){
-        //    clearTimeout(timer)
-        //    console.log("removed");
-        //}
+        let timer = setTimeout(function(){
+           window.location.href="https://www.instagram.com/_u/"+user;
+        },2000)
+        function remove(){
+            clearTimeout(timer)
+           console.log("removed");
+        }
     </script>
 </body>
 
