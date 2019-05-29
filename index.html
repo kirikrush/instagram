@@ -23,7 +23,7 @@
         } else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
             user = 'kirseich';
-            document.getElementById("frame").src = 'instagram://user?username=kirseich';
+            document.getElementById("frame").src = 'intent://instagram.com/_u/'+user+'/#Intent;package=com.instagram.android;scheme=https;end';
         } else {
             user = 'vcegdavesna';
             window.location.href="https://www.instagram.com/_u/"+user;
