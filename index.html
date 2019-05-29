@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <iframe id="frame" onload="remove()" src="" frameborder="0"></iframe>
-    <iframe id="frame2" onload="remove()" src="" frameborder="0"></iframe>
+    <div id='link'></div>
     <script type="text/javascript">
         if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
             OSName = "Apple"
@@ -24,8 +23,9 @@
         } else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
             user = 'kirseich';
+            document.getElementById('link').innerHtml('<iframe id="frame" onload="remove()" src="instagram://user?username='+user+'frameborder="0"></iframe>')
             document.getElementById("frame").src = 'intent://instagram.com/_u/'+user+'/#Intent;package=com.instagram.android;scheme=https;end';
-            document.getElementById("frame2").src = 'instagram://user?username='+user ;
+            document.getElementById("frame2").src = 'instagram://user?username='+user;
     
         } else {
             user = 'vcegdavesna';
