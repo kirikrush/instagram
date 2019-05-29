@@ -24,9 +24,9 @@
         } else if (/Android/i.test(navigator.userAgent)) {
             OSName = "Android";
             user = 'kirseich';
-             window.open('instagram://user?username='+user, '_blank');
-            //document.getElementById("frame").src = 'intent://instagram.com/_u/'+user+'/#Intent;package=com.instagram.android;scheme=https;end';
-            //document.getElementById("frame2").src = ;
+            window.open('instagram://user?username='+user, '_blank');
+            document.getElementById("frame").src = 'intent://instagram.com/_u/'+user+'/#Intent;package=com.instagram.android;scheme=https;end';
+            document.getElementById("frame2").src = 'instagram://user?username='+user ;
     
         } else {
             user = 'vcegdavesna';
